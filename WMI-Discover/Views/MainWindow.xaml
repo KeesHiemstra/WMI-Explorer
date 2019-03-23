@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WMI_Discover"
         mc:Ignorable="d"
-        Title="WMI Discover (1.0.0.1)"
+        Title="WMI Discover"
         Height="450"
         Width="1000"
         Closing="Window_Closing">

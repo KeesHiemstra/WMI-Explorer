@@ -17,6 +17,8 @@ namespace WMI_Discover
 		{
 			InitializeComponent();
 
+			Title += $" ({System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()})";
+
 			ModelView = new MainModelView(this);
 			DataContext = ModelView;
 		}
