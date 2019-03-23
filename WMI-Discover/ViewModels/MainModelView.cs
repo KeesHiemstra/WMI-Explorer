@@ -176,12 +176,11 @@ namespace WMI_Discover.ViewModels
 
 		public async Task<bool> SelectWMIClassName(string wMIClassName)
 		{
+			// Turn off the pivot tab and save the pivot Json
+			DisableExtraTabs();
+
 			WMIClassName = wMIClassName;
 			bool collected = false;
-
-			// Turn off the pivot tab
-			DisableExtraTabs();
-			//WMIPivot = null
 
 			#region Get and save the properties
 
@@ -364,7 +363,7 @@ namespace WMI_Discover.ViewModels
 
 				EnableExtraTabs();
 
-				WMIClassPivot.IsUpdated = !File.Exists(JsonClassPivotFileName);
+				WMIClassPivot.IsUpdated = WMIClassPivot.IsUpdated && !File.Exists(JsonClassPivotFileName);
 				if (WMIClassPivot.IsUpdated)
 				{
 					SaveWMIClassPivot();
@@ -389,6 +388,10 @@ namespace WMI_Discover.ViewModels
 
 		public void DisableExtraTabs()
 		{
+			if (Main.PivotTabItem.IsEnabled && WMIClassPivot.IsUpdated)
+			{
+				SaveWMIClassPivot();
+			}
 			Main.MainTabControl.SelectedIndex = 0;
 			Main.PivotTabItem.IsEnabled = false;
 			Main.PivotDataGrid.ItemsSource = null;
@@ -408,10 +411,13 @@ namespace WMI_Discover.ViewModels
 
 		private void SaveWMIClassPivot()
 		{
-			string json = JsonConvert.SerializeObject(WMIClassPivot, Formatting.Indented);
-			using (StreamWriter stream = new StreamWriter(JsonClassPivotFileName))
+			if (WMIClassPivot.IsUpdated)
 			{
-				stream.Write(json);
+				string json = JsonConvert.SerializeObject(WMIClassPivot, Formatting.Indented);
+				using (StreamWriter stream = new StreamWriter(JsonClassPivotFileName))
+				{
+					stream.Write(json);
+				}
 			}
 			WMIClassPivot.IsUpdated = false;
 		}
