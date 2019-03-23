@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using System;
+
 using System.Collections.Generic;
 
-namespace ITAMLib.Models
+namespace WMILib.Models
 {
 	public class WMIPropertyPivot
 	{
@@ -27,6 +27,7 @@ namespace ITAMLib.Models
 				}
 			}
 		}
+
 		public string Name
 		{
 			get => _name;
@@ -39,6 +40,7 @@ namespace ITAMLib.Models
 				}
 			}
 		}
+
 		public string Type
 		{
 			get => _type;
@@ -51,6 +53,7 @@ namespace ITAMLib.Models
 				}
 			}
 		}
+
 		public int TypeCount
 		{
 			get => _typeCount;
@@ -63,6 +66,7 @@ namespace ITAMLib.Models
 				}
 			}
 		}
+
 		public int TypeOcc
 		{
 			get => _typeOcc;
@@ -75,6 +79,7 @@ namespace ITAMLib.Models
 				}
 			}
 		}
+
 		public int ValueCount
 		{
 			get => _valueCount;
@@ -87,6 +92,7 @@ namespace ITAMLib.Models
 				}
 			}
 		}
+
 		public int ValueUniqueCount
 		{
 			get => _valueUniqueCount;
@@ -99,6 +105,7 @@ namespace ITAMLib.Models
 				}
 			}
 		}
+
 		public int ValueCleanCount
 		{
 			get => _valueCleanCount;

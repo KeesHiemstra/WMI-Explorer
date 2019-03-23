@@ -1,12 +1,10 @@
 ﻿using Newtonsoft.Json;
-using System;
+
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ITAMLib.Models
+namespace WMILib.Models
 {
 	public class WMIClassPivot
 	{
@@ -31,6 +29,7 @@ namespace ITAMLib.Models
 				}
 			}
 		}
+
 		public int PropertyCount
 		{
 			get => _propertyCount;
@@ -43,6 +42,7 @@ namespace ITAMLib.Models
 				}
 			}
 		}
+
 		public int CollectionCount
 		{
 			get => _collectionCount;
@@ -55,6 +55,7 @@ namespace ITAMLib.Models
 				}
 			}
 		}
+
 		public int MemberCount
 		{
 			get => _memberCount;
@@ -84,7 +85,9 @@ namespace ITAMLib.Models
 
 		public ObservableCollection<WMIPropertyPivot> Pivots = new ObservableCollection<WMIPropertyPivot>();
 
-		public WMIClassPivot() { }
+		public WMIClassPivot()
+		{
+		}
 
 		public WMIClassPivot(ObservableCollection<WMIProperty> Properties, string className)
 		{
@@ -185,10 +188,9 @@ namespace ITAMLib.Models
 				.ToList();
 
 			pivot.TypeOcc = Types.Count;
-
 		}
 
-		#endregion
+		#endregion Type information
 
 		#region Value information
 
@@ -232,7 +234,6 @@ namespace ITAMLib.Models
 			pivot.ValueCleanCount = Values.Count();
 		}
 
-		#endregion
-
+		#endregion Value information
 	}
 }

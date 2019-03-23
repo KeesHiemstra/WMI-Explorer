@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{443E7CC3-22BE-4D65-AFC9-C5795BFCF6C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMILib", "WMILib\WMILib.csproj", "{672B3F2B-026D-4466-8CB6-7288ACB8969A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMI-Discover", "WMI-Discover\WMI-Discover.csproj", "{A03CFB74-C96B-4C00-B5BC-A8DAA82CD22D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{443E7CC3-22BE-4D65-AFC9-C5795BFCF6C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{443E7CC3-22BE-4D65-AFC9-C5795BFCF6C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{443E7CC3-22BE-4D65-AFC9-C5795BFCF6C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{443E7CC3-22BE-4D65-AFC9-C5795BFCF6C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{672B3F2B-026D-4466-8CB6-7288ACB8969A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{672B3F2B-026D-4466-8CB6-7288ACB8969A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{672B3F2B-026D-4466-8CB6-7288ACB8969A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{672B3F2B-026D-4466-8CB6-7288ACB8969A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03CFB74-C96B-4C00-B5BC-A8DAA82CD22D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03CFB74-C96B-4C00-B5BC-A8DAA82CD22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03CFB74-C96B-4C00-B5BC-A8DAA82CD22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03CFB74-C96B-4C00-B5BC-A8DAA82CD22D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -106,9 +106,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ITAMLib\ITAMLib.csproj">
+    <ProjectReference Include="..\WMILib\WMILib.csproj">
       <Project>{672B3F2B-026D-4466-8CB6-7288ACB8969A}</Project>
-      <Name>ITAMLib</Name>
+      <Name>WMILib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

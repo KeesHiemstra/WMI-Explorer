@@ -1,15 +1,16 @@
-﻿using ITAMLib.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Management;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+
+using WMILib.Models;
 
 namespace WMI_Discover.ViewModels
 {
@@ -30,8 +31,9 @@ namespace WMI_Discover.ViewModels
 
 		// Search panel
 		public static List<string> CategoryNames { get; set; } = new List<string>();
+
 		public static List<string> StatusNames { get; set; } = new List<string>();
-		public string ClassNameContain { get; set; } = "Account";// string.Empty; // Search box content
+		public string ClassNameContain { get; set; } = string.Empty; // Search box content
 		public string CategoryName { get; set; } = string.Empty; // Category dropdown content
 		public string StatusName { get; set; } = string.Empty; // Status dropdown content
 
@@ -77,7 +79,7 @@ namespace WMI_Discover.ViewModels
 			}
 		}
 
-		#endregion
+		#endregion On Opening and closing the application
 
 		#region Work on the WMIClassNames filter
 
@@ -155,7 +157,7 @@ namespace WMI_Discover.ViewModels
 			return result;
 		}
 
-		#endregion
+		#endregion Work on the WMIClassNames filter
 
 		#region Act on selections of SearchBox has effect on the WMIClassNames
 
@@ -168,7 +170,7 @@ namespace WMI_Discover.ViewModels
 			}
 		}
 
-		#endregion
+		#endregion Act on selections of SearchBox has effect on the WMIClassNames
 
 		#region Act on selected WMIClassName [WMIClasses]
 
@@ -182,6 +184,7 @@ namespace WMI_Discover.ViewModels
 			//WMIPivot = null
 
 			#region Get and save the properties
+
 			if (File.Exists(JsonClassDataFileName))
 			{
 				try
@@ -233,9 +236,11 @@ namespace WMI_Discover.ViewModels
 					MessageBox.Show($"Collecting WMI Class error:\n{ex.Message}", "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
 				}
 			}
-			#endregion
+
+			#endregion Get and save the properties
 
 			#region MainWindow <PropertiesCountTextBlock> update
+
 			if (collected && WMIProperties.Count == 0)
 			{
 				Main.ClassResultTextBlock.Text = "Empty class";
@@ -252,7 +257,8 @@ namespace WMI_Discover.ViewModels
 				extra = "ies";
 			}
 			Main.PropertiesCountTextBlock.Text = $"{WMIProperties.Count} propert{extra}"; // property or properties
-			#endregion
+
+			#endregion MainWindow <PropertiesCountTextBlock> update
 
 			if (collected && WMIProperties.Count > 0)
 			{
@@ -289,7 +295,7 @@ namespace WMI_Discover.ViewModels
 
 			ManagementObjectCollection queryCollection = searcher.Get();
 
-			#endregion
+			#endregion Preparation
 
 			try
 			{
@@ -328,7 +334,7 @@ namespace WMI_Discover.ViewModels
 			record.Status = status;
 		}
 
-		#endregion
+		#endregion Act on selected WMIClassName [WMIClasses]
 
 		#region Create pivot for success loaded WMIClass
 
@@ -390,7 +396,7 @@ namespace WMI_Discover.ViewModels
 			Main.CodeTabItem.IsEnabled = false;
 		}
 
-		#endregion
+		#endregion Create pivot for success loaded WMIClass
 
 		public void ActOnPivotTabItem(bool IsEnabledChanged)
 		{
@@ -409,6 +415,5 @@ namespace WMI_Discover.ViewModels
 			}
 			WMIClassPivot.IsUpdated = false;
 		}
-
 	}
 }

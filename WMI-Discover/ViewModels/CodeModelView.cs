@@ -1,9 +1,6 @@
-﻿using ITAMLib.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+
+using WMILib.Models;
 
 namespace WMI_Discover.ViewModels
 {
@@ -90,6 +87,5 @@ namespace WMI_Discover.ViewModels
 
 			return code;
 		}
-
 	}
 }
