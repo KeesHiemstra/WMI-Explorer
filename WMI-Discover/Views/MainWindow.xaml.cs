@@ -28,6 +28,11 @@ namespace WMI_Discover
 			ModelView.UpdateFilterWMIClassNames();
 		}
 
+		private void ClearBotton_Click(object sender, RoutedEventArgs e)
+		{
+			ModelView.ClearFilterSeachPanel();
+		}
+
 		private async void WMIClassComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			try

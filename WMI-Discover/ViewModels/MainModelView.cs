@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Management;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -97,6 +98,15 @@ namespace WMI_Discover.ViewModels
 			{
 				Main.WMIPropertiesDataGrid.ItemsSource = null;
 			}
+		}
+
+		public void ClearFilterSeachPanel()
+		{
+			Main.SearchTextBox.Text = String.Empty;
+			Main.CategoryComboBox.SelectedIndex = -1;
+			Main.StatusComboBox.SelectedIndex = -1;
+
+			UpdateFilterWMIClassNames();
 		}
 
 		private List<string> FilterWMIClassNames()
@@ -279,6 +289,13 @@ namespace WMI_Discover.ViewModels
 
 			#region Preparation
 
+			Cursor cursor = Main.Cursor;
+			Main.Cursor = Cursors.Wait;
+			Thread.Sleep(100);
+
+			Main.WMIClassComboBox.Focus();
+			Main.WMIClassComboBox.IsDropDownOpen = false;
+
 			ConnectionOptions options = new ConnectionOptions
 			{
 				Impersonation = System.Management.ImpersonationLevel.Impersonate
@@ -313,6 +330,10 @@ namespace WMI_Discover.ViewModels
 			catch (Exception ex)
 			{
 				MessageBox.Show($"Error: {ex.Message}", "Exception error", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+			finally
+			{
+				Main.Cursor = cursor;
 			}
 
 			//Main.WMIPropertiesDataGrid.ItemsSource = WMIProperties;
