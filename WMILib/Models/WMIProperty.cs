@@ -61,7 +61,7 @@ namespace WMILib.Models
 			}
 			else if (data.Type.ToString() == "DataTime")
 			{
-				Value = ((DateTime)data.Value).ToString("yyyy-MM-dd HH:mm:ss.fff");
+				Value = ((DateTime)data.Value).ToString("yyyy-MM-dd HH:mm:ss.fffff");
 			}
 			else
 			{

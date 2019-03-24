@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMILib", "WMILib\WMILib.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMI-Discover", "WMI-Discover\WMI-Discover.csproj", "{A03CFB74-C96B-4C00-B5BC-A8DAA82CD22D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMI-Dump", "WMI-Dump\WMI-Dump.csproj", "{3FD18B15-C7CC-4911-83CE-4F22E7BF8FC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A03CFB74-C96B-4C00-B5BC-A8DAA82CD22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A03CFB74-C96B-4C00-B5BC-A8DAA82CD22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A03CFB74-C96B-4C00-B5BC-A8DAA82CD22D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD18B15-C7CC-4911-83CE-4F22E7BF8FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD18B15-C7CC-4911-83CE-4F22E7BF8FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD18B15-C7CC-4911-83CE-4F22E7BF8FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD18B15-C7CC-4911-83CE-4F22E7BF8FC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
