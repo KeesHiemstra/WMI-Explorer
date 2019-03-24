@@ -124,6 +124,8 @@ namespace WMI_Dump
 					className.Status = Status;
 					className.Duration = DateTime.Now - Start;
 				}
+
+				WriteWMIClasses();
 			}
 
 			Log("GetWMIClassesData() is completed");
