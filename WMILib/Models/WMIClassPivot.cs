@@ -78,10 +78,15 @@ namespace WMILib.Models
 				{
 					_isUpdated = _isUpdated || item;
 				}
+
+				NeedUpdate = NeedUpdate || _isUpdated;
 				return _isUpdated;
 			}
 			set => _isUpdated = value;
 		}
+
+		[JsonIgnore]
+		public bool NeedUpdate { get; set; } = false;
 
 		public ObservableCollection<WMIPropertyPivot> Pivots = new ObservableCollection<WMIPropertyPivot>();
 

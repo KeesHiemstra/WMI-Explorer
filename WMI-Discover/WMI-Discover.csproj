@@ -70,6 +70,7 @@
     </Compile>
     <Compile Include="ViewModels\CodeModelView.cs" />
     <Compile Include="ViewModels\MainModelView.cs" />
+    <Compile Include="ViewModels\ExportModelView.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -110,6 +111,9 @@
       <Project>{672B3F2B-026D-4466-8CB6-7288ACB8969A}</Project>
       <Name>WMILib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -78,6 +78,7 @@
     <TabControl Name="MainTabControl"
                 Grid.Column="1"
                 Grid.Row="1">
+      
       <TabItem Name="MainTabItem"
                Header="Main">
 
@@ -100,6 +101,7 @@
           </DataGrid>
         </Grid>
       </TabItem>
+      
       <TabItem Name="PivotTabItem"
                Header="Pivot"
                IsEnabled="False"
@@ -148,7 +150,8 @@
 
       <TabItem Name="CodeTabItem"
                Header="Code"
-               IsEnabled="False">
+               IsEnabled="False"
+               GotFocus="CodeTabItem_GotFocus">
 
         <TabControl Name="CodeTabControl"
                     TabStripPlacement="Bottom">
@@ -189,6 +192,17 @@
                      VerticalScrollBarVisibility="Auto" />
           </TabItem>
         </TabControl>
+      </TabItem>
+
+      <TabItem Name="ExportTabItem"
+               Header="Export"
+               IsEnabled="False"
+               GotFocus="ExportTabItem_GotFocus">
+
+        <StackPanel Orientation="Vertical">
+          <Button Name="ExportAsTable"/>
+        </StackPanel>
+        
       </TabItem>
     </TabControl>
   </Grid>

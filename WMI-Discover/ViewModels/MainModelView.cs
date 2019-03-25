@@ -18,6 +18,8 @@ namespace WMI_Discover.ViewModels
 	public class MainModelView
 	{
 		private const string JsonFileName = @"C:\Etc\ITAM\WMI\WMIClasses.json";
+		//private readonly object JsonConvert;
+
 		private static string JsonClassDataFileName { get { return $"C:\\Etc\\ITAM\\WMI\\{WMIClassName}-Data.json"; } }
 		private static string JsonClassPivotFileName { get { return $"C:\\Etc\\ITAM\\WMI\\{WMIClassName}-Pivot.json"; } }
 
@@ -401,10 +403,26 @@ namespace WMI_Discover.ViewModels
 			Main.PivotDataGrid.ItemsSource = WMIClassPivot.Pivots;
 			Main.PivotTabItem.IsEnabled = true;
 
-			Main.ClassCodeTextBox.Text = CodeModelView.ClassCode(WMIClassPivot);
-			Main.ClassListTextBox.Text = CodeModelView.ClassList(WMIClassPivot);
-			Main.ClassAppTextBox.Text = CodeModelView.ClassApp(WMIClassPivot);
 			Main.CodeTabItem.IsEnabled = true;
+
+			Main.ExportTabItem.IsEnabled = true;
+		}
+
+		public void WriteCodeTextBox()
+		{
+			if (WMIClassPivot.NeedUpdate)
+			{
+				Main.ClassCodeTextBox.Text = CodeModelView.ClassCode(WMIClassPivot);
+				Main.ClassListTextBox.Text = CodeModelView.ClassList(WMIClassPivot);
+				Main.ClassAppTextBox.Text = CodeModelView.ClassApp(WMIClassPivot);
+
+				WMIClassPivot.NeedUpdate = false;
+			}
+		}
+
+		public void PrepareExportToClipboard()
+		{
+			ExportModelView.ExportNames = WMIClassPivot.Pivots.Where(x => x.Select).Select(x => x.Name).ToList();
 		}
 
 		public void DisableExtraTabs()
@@ -418,6 +436,8 @@ namespace WMI_Discover.ViewModels
 			Main.PivotDataGrid.ItemsSource = null;
 
 			Main.CodeTabItem.IsEnabled = false;
+
+			Main.TableTabItem.IsEnabled = false;
 		}
 
 		#endregion Create pivot for success loaded WMIClass

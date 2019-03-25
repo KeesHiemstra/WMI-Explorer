@@ -86,5 +86,15 @@ namespace WMI_Discover
 				ModelView.ActOnPivotTabItem((bool)e.NewValue);
 			}
 		}
+
+		private void CodeTabItem_GotFocus(object sender, RoutedEventArgs e)
+		{
+			ModelView.WriteCodeTextBox();
+		}
+
+		private void ExportTabItem_GotFocus(object sender, RoutedEventArgs e)
+		{
+			ModelView.PrepareExportToClipboard();
+		}
 	}
 }
