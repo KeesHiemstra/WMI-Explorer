@@ -200,7 +200,9 @@
                GotFocus="ExportTabItem_GotFocus">
 
         <StackPanel Orientation="Vertical">
-          <Button Name="ExportAsTable"/>
+          <Button Name="ExportAsTable"
+                  Content="Export as table to clipboard"
+                  Click="ExportAsTable_Click"/>
         </StackPanel>
         
       </TabItem>

@@ -96,5 +96,10 @@ namespace WMI_Discover
 		{
 			ModelView.PrepareExportToClipboard();
 		}
+
+		private void ExportAsTable_Click(object sender, RoutedEventArgs e)
+		{
+			ModelView.ExportAsTable();
+		}
 	}
 }

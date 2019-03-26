@@ -423,6 +423,13 @@ namespace WMI_Discover.ViewModels
 		public void PrepareExportToClipboard()
 		{
 			ExportModelView.ExportNames = WMIClassPivot.Pivots.Where(x => x.Select).Select(x => x.Name).ToList();
+			ExportModelView.CollectionCount = WMIClassPivot.CollectionCount;
+		}
+
+		public void ExportAsTable()
+		{
+			string table = ExportModelView.ExportAsTable(WMIProperties);
+			Clipboard.SetText(table);
 		}
 
 		public void DisableExtraTabs()
@@ -437,7 +444,7 @@ namespace WMI_Discover.ViewModels
 
 			Main.CodeTabItem.IsEnabled = false;
 
-			Main.TableTabItem.IsEnabled = false;
+			Main.ExportTabItem.IsEnabled = false;
 		}
 
 		#endregion Create pivot for success loaded WMIClass
