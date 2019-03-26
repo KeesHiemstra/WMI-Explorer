@@ -42,9 +42,9 @@ namespace WMI_Discover.ViewModels
 			code += "\t\t{\n";
 			code += "\t\t\tComputerName = System.Environment.MachineName;\n";
 			code += "\t\t\tCollectWmiClass(WmiClass, members);\n";
-			code += "\t\t|\n";
+			code += "\t\t}\n";
 			code += "\n";
-			code += "\t\t\n";
+			code += "\t\tprivate async void CollectWmiClass(string wmiClass, string members)\n";
 			code += "\t\t{\n";
 			code += "\t\t\tItems.Clear();\n";
 			code += "\n";
@@ -62,7 +62,7 @@ namespace WMI_Discover.ViewModels
 			code += "\t\t\tcatch (Exception ex)\n";
 			code += "\t\t\t{\n";
 			code += "\t\t\t\tMessageBox.Show($\"Quering the WMI results in an exception:\\";
-			code += "n{ex.Message}, \"Exception\", MessageBoxButton.OK, MessageBoxImage.Exclamation);\n";
+			code += "n{ex.Message}\", \"Exception\", MessageBoxButton.OK, MessageBoxImage.Exclamation);\n";
 			code += "\t\t\t}\n";
 			code += "\t\t}\n";
 			code += "\t}\n";
