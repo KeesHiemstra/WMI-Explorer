@@ -101,5 +101,20 @@ namespace WMI_Discover
 		{
 			ModelView.ExportAsTable();
 		}
+
+		private void ClassCodeTabItem_GotFocus(object sender, RoutedEventArgs e)
+		{
+			ClassCodeTextBox.Focus();
+		}
+
+		private void ListCodeTabItem_GotFocus(object sender, RoutedEventArgs e)
+		{
+			ClassListTextBox.Focus();
+		}
+
+		private void AppCodeTabItem_GotFocus(object sender, RoutedEventArgs e)
+		{
+			ClassAppTextBox.Focus();
+		}
 	}
 }

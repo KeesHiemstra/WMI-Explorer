@@ -157,7 +157,8 @@
                     TabStripPlacement="Bottom">
 
           <TabItem Name="ClassCodeTabItem"
-                   Header="Class">
+                   Header="Class"
+                   GotFocus="ClassCodeTabItem_GotFocus">
             <TextBox Name="ClassCodeTextBox"
                      AcceptsReturn="True"
                      AcceptsTab="True"
@@ -169,7 +170,8 @@
           </TabItem>
 
           <TabItem Name="ListCodeTabItem"
-                   Header="List">
+                   Header="List" 
+                   GotFocus="ListCodeTabItem_GotFocus">
             <TextBox Name="ClassListTextBox"
                      AcceptsReturn="True"
                      AcceptsTab="True"
@@ -181,7 +183,8 @@
           </TabItem>
 
           <TabItem Name="AppCodeTabItem"
-                   Header="Application">
+                   Header="Application"
+                   GotFocus="AppCodeTabItem_GotFocus">
             <TextBox Name="ClassAppTextBox"
                      AcceptsReturn="True"
                      AcceptsTab="True"
