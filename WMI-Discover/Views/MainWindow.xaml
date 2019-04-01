@@ -194,6 +194,19 @@
                      HorizontalScrollBarVisibility="Auto"
                      VerticalScrollBarVisibility="Auto" />
           </TabItem>
+
+          <TabItem Name="SQLTabItem"
+                   Header="SQL"
+                   GotFocus="SQLTabItem_GotFocus">
+            <TextBox Name="SQLTextBox"
+                     AcceptsReturn="True"
+                     AcceptsTab="True"
+                     AutoWordSelection="True"
+                     FontFamily="Courier New"
+                     FontSize="11"
+                     HorizontalScrollBarVisibility="Auto"
+                     VerticalScrollBarVisibility="Auto" />
+          </TabItem>
         </TabControl>
       </TabItem>
 

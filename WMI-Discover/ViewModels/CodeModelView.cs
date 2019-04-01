@@ -88,5 +88,20 @@ namespace WMI_Discover.ViewModels
 
 			return code;
 		}
+
+		public static string SQL(WMIClassPivot pivot)
+		{
+			string code = string.Empty;
+
+			code += $"CREATE TABLE dbo.{pivot.ClassName}(\r\n";
+			code += "\t[Id] [int] IDENTITY(1, 1) NOT NULL,\r\n";
+			code += $"\tCONSTRAINT [PK_{pivot.ClassName}] PRIMARY KEY CLUSTERED\r\n";
+			code += "\t(\r\n";
+			code += "\t\t[Id] ASC\r\n";
+			code += "\t) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]\r\n";
+			code += ") ON [PRIMARY]\r\n";
+
+			return code;
+		}
 	}
 }

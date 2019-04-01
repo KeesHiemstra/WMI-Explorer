@@ -116,5 +116,10 @@ namespace WMI_Discover
 		{
 			ClassAppTextBox.Focus();
 		}
+
+		private void SQLTabItem_GotFocus(object sender, RoutedEventArgs e)
+		{
+			SQLTextBox.Focus();
+		}
 	}
 }
