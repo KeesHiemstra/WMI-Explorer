@@ -415,6 +415,7 @@ namespace WMI_Discover.ViewModels
 				Main.ClassCodeTextBox.Text = CodeModelView.ClassCode(WMIClassPivot);
 				Main.ClassListTextBox.Text = CodeModelView.ClassList(WMIClassPivot);
 				Main.ClassAppTextBox.Text = CodeModelView.ClassApp(WMIClassPivot);
+				Main.SQLTextBox.Text = CodeModelView.SQL(WMIClassPivot);
 
 				WMIClassPivot.NeedUpdate = false;
 			}

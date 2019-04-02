@@ -95,6 +95,10 @@ namespace WMI_Discover.ViewModels
 
 			code += $"CREATE TABLE dbo.{pivot.ClassName}(\r\n";
 			code += "\t[Id] [int] IDENTITY(1, 1) NOT NULL,\r\n";
+			foreach (var item in pivot.Pivots.Where(x => x.Select))
+			{
+				
+			}
 			code += $"\tCONSTRAINT [PK_{pivot.ClassName}] PRIMARY KEY CLUSTERED\r\n";
 			code += "\t(\r\n";
 			code += "\t\t[Id] ASC\r\n";

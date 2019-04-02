@@ -152,8 +152,19 @@ namespace WMILib.Models
 
 		private void GetTypePivots(IEnumerable<WMIProperty> queryProperty, WMIPropertyPivot pivot)
 		{
+			GetLengthPivot(queryProperty, pivot);
 			GetTypePivot(queryProperty, pivot);
 			GetTypeOccPivot(queryProperty, pivot);
+		}
+
+		private void GetLengthPivot(IEnumerable<WMIProperty> queryProperty, WMIPropertyPivot pivot)
+		{
+			List<string> Types = new List<string>();
+			Types = queryProperty
+				.Select(x => x.Value)
+				.ToList();
+
+			pivot.MaxLength = Types.Max(x => x.Length);
 		}
 
 		private void GetTypePivot(IEnumerable<WMIProperty> queryProperty, WMIPropertyPivot pivot)

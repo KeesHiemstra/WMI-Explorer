@@ -9,6 +9,8 @@ namespace WMILib.Models
 		private bool _select;
 		private string _name;
 		private string _type;
+		private int _minLength;
+		private int _maxLength;
 		private int _typeCount = -1;
 		private int _typeOcc = -1;
 		private int _valueCount = -1;
@@ -49,6 +51,32 @@ namespace WMILib.Models
 				if (_type != value)
 				{
 					_type = value;
+					IsUpdated = true;
+				}
+			}
+		}
+
+		public int MinLength
+		{
+			get => _minLength;
+			set
+			{
+				if (_minLength != value)
+				{
+					_minLength = value;
+					IsUpdated = true;
+				}
+			}
+		}
+
+		public int MaxLength
+		{
+			get => _maxLength;
+			set
+			{
+				if (_maxLength != value)
+				{
+					_maxLength = value;
 					IsUpdated = true;
 				}
 			}
