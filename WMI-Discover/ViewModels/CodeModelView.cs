@@ -95,9 +95,15 @@ namespace WMI_Discover.ViewModels
 
 			code += $"CREATE TABLE dbo.{pivot.ClassName}(\r\n";
 			code += "\t[Id] [int] IDENTITY(1, 1) NOT NULL,\r\n";
+			code += "\t[ComputerName] [varchar(15)] NOT NULL,\r\n";
 			foreach (var item in pivot.Pivots.Where(x => x.Select))
 			{
-				
+				string SQLNull = string.Empty;
+				if (item.MinLength > 0)
+				{
+					SQLNull = "NOT ";
+				}
+				code += $"\t[{item.Name}] [varchar({item.MaxLength})] {SQLNull}NULL,\r\n";
 			}
 			code += $"\tCONSTRAINT [PK_{pivot.ClassName}] PRIMARY KEY CLUSTERED\r\n";
 			code += "\t(\r\n";

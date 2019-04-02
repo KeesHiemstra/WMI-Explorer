@@ -92,6 +92,7 @@ namespace WMILib.Models
 
 		public WMIClassPivot()
 		{
+
 		}
 
 		public WMIClassPivot(ObservableCollection<WMIProperty> Properties, string className)
@@ -161,9 +162,11 @@ namespace WMILib.Models
 		{
 			List<string> Types = new List<string>();
 			Types = queryProperty
-				.Select(x => x.Value)
+				.Select(x => x.Value.Trim().Replace("<null>", "").Replace("<n/a>", ""))
+				.Distinct()
 				.ToList();
 
+			pivot.MinLength = Types.Min(x => x.Length);
 			pivot.MaxLength = Types.Max(x => x.Length);
 		}
 

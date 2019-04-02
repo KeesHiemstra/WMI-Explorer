@@ -139,6 +139,7 @@
               <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True" />
               <DataGridTextColumn Header="Type" Binding="{Binding Type}" IsReadOnly="True" />
               <DataGridTextColumn Header="Type #" Binding="{Binding TypeCount}" IsReadOnly="True" />
+              <DataGridTextColumn Header="Min" Binding="{Binding MinLength}" IsReadOnly="True" />
               <DataGridTextColumn Header="Max" Binding="{Binding MaxLength}" IsReadOnly="True" />
               <DataGridTextColumn Header="Occur" Binding="{Binding TypeOcc}" IsReadOnly="True" />
               <DataGridTextColumn Header="Value" Binding="{Binding ValueCount}" IsReadOnly="True" />
